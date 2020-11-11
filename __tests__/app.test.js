@@ -113,9 +113,19 @@ describe('app routes', () => {
         'completed': true,
         'owner_id': 2
       }];
+      const input = [
+        {
+          'id': 4,
+          'todo': 'walk the dog',
+          'completed': false,
+          'owner_id': 2
+        }
+      ];
+
 
       const data = await fakeRequest(app)
-        .put('/api/todos/7')
+        .put('/api/todos/4')
+        .send(input[0])
         .set('Authorization', token)
         .expect('Content-Type', /json/)
         .expect(200);
