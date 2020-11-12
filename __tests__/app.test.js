@@ -86,7 +86,7 @@ describe('app routes', () => {
     test('add one todo', async() => {
 
       const expectation = [{
-        'id': 4,
+        'id': 7,
         'todo': 'walk the dog',
         'completed': false,
         'owner_id': 2
@@ -105,20 +105,18 @@ describe('app routes', () => {
       expect(data.body).toEqual(expectation);
     });
 
-    test.only('updates todo', async() => {
+    test('updates todo', async() => {
 
       const expectation = [{
         'id': 4,
-        'todo': 'walk the dog',
+        'todo': 'sweep',
         'completed': true,
         'owner_id': 2
       }];
       const input = [
         {
-          'id': 4,
           'todo': 'walk the dog',
-          'completed': false,
-          'owner_id': 2
+          'completed': true,
         }
       ];
 
